@@ -1,0 +1,13 @@
+#!/bin/sh 
+# add automatically a network segment in your pptp conection 
+# copy this file into /etc/ppp/ip-up and give permissions 775
+# by kamusin
+
+PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/libexec:/System/Library/CoreServices; export PATH
+
+ 
+
+#ifppp=$(ifconfig ppp0 | grep inet | awk '{print $2;}') 
+
+
+/sbin/route add -net 172.16.0.0/16 -interface ppp0 
